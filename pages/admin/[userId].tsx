@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 
 import Layout from '../../components/Layout';
 import UserForm from '../../components/UserForm';
-import TransferList from '../../components/TransferList';
 import { IUser } from '../../types/user.type';
 
 const EditEmployee = () => {
@@ -13,9 +12,6 @@ const EditEmployee = () => {
   let user = null;
 
   const handleUserChanged = (state: IUser) => user = state;
-  const transferListUpdated = (left: string[], right: string[]) => {
-    console.log(left, right);
-  }
 
   const submit = async () => {
     console.log('Update user', user);
@@ -26,8 +22,6 @@ const EditEmployee = () => {
   return (
     <Layout>
       <UserForm stateChanged={handleUserChanged} userId={router.query.userId} />
-
-      <TransferList left={['a', 'b']} right={['c']} listUpdated={transferListUpdated}/>
 
       <Button variant="contained" style={{ marginRight: 10 }} onClick={back}>
         Back
