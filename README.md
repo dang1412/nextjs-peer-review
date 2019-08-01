@@ -50,6 +50,8 @@ Folder structure
  - types: defines interface for *user* and *review*, used both by client and server
 
 # Run
+Assume mongodb running at mongodb://localhost:27017
+
 ```
 npm i
 npm run dev
